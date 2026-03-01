@@ -33,3 +33,9 @@ Functions responsible for frontend visualization decoupled from game logic.
 Since Streamlit re-executes the file on every interaction, game persistence relies on Streamlit's caching dictionary: `st.session_state`.
 - `st.session_state.board`: Holds the 4x4 coordinate list.
 - `st.session_state.score`: Tracks incremental merges dynamically.
+
+## Testing Strategy
+The game is accompanied by a pure Python testing suite (`test_2048.py`) driven by `pytest`. Because the game logic is cleanly decoupled from the UI rendering, state transformations can be tested functionally without spinning up a headless browser.
+
+- **Functional Tests (`TestGameLogic`)**: Validates the mathematical purity of `initialize_board`, `rotate_board`, and standard `move_left`. Also exhaustively checks all conditions for `is_game_over`.
+- **Regression Tests (`TestRegression`)**: Mimics edge-case boards known to cause bugs in 2048 clones (e.g., triple merges, incorrect cascade merges, and wall-spawn preventing).

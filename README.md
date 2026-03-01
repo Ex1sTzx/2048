@@ -24,3 +24,16 @@ Combine blocks with the matching numbers to reach the ultimate **2048** tile!
    ```bash
    streamlit run 2048.py
    ```
+
+## 🧪 Testing
+
+The game comes with a comprehensive suite of **functional and regression tests** to ensure the core mechanics and edge cases behave mathematically correctly.
+
+1. **Install Pytest**
+   ```bash
+   pip install pytest
+   ```
+2. **Run the Tests**
+   ```bash
+   pytest test_2048.py -v
+   ```
