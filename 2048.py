@@ -55,7 +55,7 @@ def move_left(board):
     return new_board
 
 def rotate_board(board):
-    """Rotates the board 90 degrees clockwise."""
+    """Rotates the board 90 degrees counter-clockwise."""
     return [[board[j][i] for j in range(4)] for i in range(3, -1, -1)]
 
 def move(board, direction):
